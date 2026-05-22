@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(79, 160, 255, 0.18), transparent 26%),
+      radial-gradient(circle at top right, rgba(22, 47, 105, 0.14), transparent 32%),
+      linear-gradient(180deg, #fffdf8 0%, #f4f7fb 54%, #edf2f8 100%);
+    @apply min-h-screen text-slate-900 antialiased;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+}
+
+body {
+  @apply text-slate-900;
+}
+
+.card {
+  @apply rounded-[28px] border border-white/70 bg-white/80 shadow-panel backdrop-blur;
+}
+
+.input {
+  @apply w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-100/80;
+}
+
+.btn-primary {
+  @apply rounded-2xl bg-[linear-gradient(135deg,#0f5ae0_0%,#1f7aff_55%,#56b6ff_100%)] px-5 py-3.5 font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:shadow-soft disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.btn-secondary {
+  @apply rounded-2xl border border-slate-200 bg-white/80 px-5 py-3.5 font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.page-shell {
+  @apply space-y-6;
+}
+
+.page-hero {
+  @apply relative overflow-hidden rounded-[32px] border border-white/60 bg-[linear-gradient(135deg,#0f1728_0%,#153872_36%,#1f7aff_72%,#8ad7ff_100%)] px-6 py-7 text-white shadow-soft sm:px-8;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,0.24), transparent 22%),
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,0.12), transparent 26%);
+  pointer-events: none;
+}
+
+.page-hero-content {
+  @apply relative z-10;
+}
+
+.section-title {
+  @apply text-xs font-semibold uppercase tracking-[0.28em] text-slate-400;
+}
+
+.data-grid {
+  @apply grid gap-4 md:grid-cols-2 xl:grid-cols-4;
+}
+
+.glass-note {
+  @apply rounded-3xl border border-white/70 bg-white/75 shadow-panel backdrop-blur;
+}
